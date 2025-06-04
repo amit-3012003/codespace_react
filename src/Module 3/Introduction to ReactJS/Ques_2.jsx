@@ -4,11 +4,11 @@
 import React from "react";
 
 function Ques_2() {
-  const currentYear = new Date().getFullYear();
+  const currentYea = new Date().getFullYear();
 
   return (
     <div>
-      <p>The current year is {currentYear}</p>
+      <p>The current year is {currentYea}</p>
     </div>
   );
 }
