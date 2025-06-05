@@ -8,31 +8,19 @@
 import React, { useState } from 'react';
 
 const Counter = () => {
-  // Initialize state with a count of 0
   const [count, setCount] = useState(0);
 
-  // Function to increment the count
-  const incrementCount = () => {
-    setCount(count + 1);
+  const incrementCount = (amount) => {
+    setCount(prevCount => prevCount + amount);
   };
 
   return (
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
       <h2>Counter: {count}</h2>
-      <button 
-        onClick={incrementCount}
-        style={{
-          padding: '10px 20px',
-          fontSize: '15px',
-          backgroundColor: '#4CAF50',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer'
-        }}
-      >
-        Increment
-      </button>
+      <button onClick={() => incrementCount(1)}>+1</button>
+      <button onClick={() => incrementCount(5)}>+5</button>
+      <button onClick={() => incrementCount(10)}>+10</button>
+      <button onClick={() => setCount(0)}>Reset</button>
     </div>
   );
 };
