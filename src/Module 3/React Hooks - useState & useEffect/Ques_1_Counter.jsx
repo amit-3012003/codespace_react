@@ -23,7 +23,7 @@ const Counter = () => {
         onClick={incrementCount}
         style={{
           padding: '10px 20px',
-          fontSize: '16px',
+          fontSize: '15px',
           backgroundColor: '#4CAF50',
           color: 'white',
           border: 'none',
