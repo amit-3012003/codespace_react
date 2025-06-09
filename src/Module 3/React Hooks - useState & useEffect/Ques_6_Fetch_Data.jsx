@@ -33,7 +33,7 @@ const FetchData = () => {
   }, []); // Empty dependency array means this runs once on mount
 
   if (loading) {
-    return <div>Loading data...</div>;
+    return <div>Loading data..</div>;
   }
 
   if (error) {
