@@ -41,7 +41,7 @@ const styles = {
   container: {
     maxWidth: '500px',
     margin: '0 auto',
-    padding: '20px',
+    padding: '19px',
     fontFamily: 'Arial, sans-serif',
   },
   title: {
