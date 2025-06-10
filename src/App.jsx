@@ -5,11 +5,11 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import SubPage from './components/SubPage';
 
 function App() {
   return (
     <BrowserRouter>
-      {/* Optional: a simple nav */}
       <nav style={{ padding: '10px', borderBottom: '1px solid #ccc' }}>
         <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
         <Link to="/about" style={{ marginRight: '10px' }}>About</Link>
@@ -18,20 +18,15 @@ function App() {
 
       <div style={{ padding: '20px' }}>
         <Routes>
-          {/* When path is exactly “/” render <Home /> */}
           <Route path="/" element={<Home />} />
+          
+          {/* Nested route structure for About */}
+          <Route path="/about" element={<About />}>
+            <Route path="subpage" element={<SubPage />} />
+          </Route>
 
-          {/* When path is “/about” render <About /> */}
-          <Route path="/about" element={<About />} />
-
-          {/* When path is “/contact” render <Contact /> */}
           <Route path="/contact" element={<Contact />} />
-
-          {/* Optional: catch-all “Not Found” */}
-          <Route
-            path="*"
-            element={<h2>404: Page Not Found</h2>}
-          />
+          <Route path="*" element={<h2>404: Page Not Found</h2>} />
         </Routes>
       </div>
     </BrowserRouter>

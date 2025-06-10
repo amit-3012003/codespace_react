@@ -1,11 +1,8 @@
-import React from 'react'
+// src/components/SubPage.jsx
+import React from 'react';
 
-const Subpage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+function SubPage() {
+  return <h3>This is the SubPage under About</h3>;
 }
 
-export default Subpage
+export default SubPage;
