@@ -28,7 +28,7 @@ function FavoriteColor() {
           onChange={(e) => setColor(e.target.value)}
           style={{ padding: '8px', width: '250px' }}
         />
-        <button type="submit" style={{ marginLeft: '10px', padding: '8px 12px' }}>
+        <button type="submit" style={{ marginLeft: '10px', padding: '8px 11px' }}>
           Submit
         </button>
       </form>
