@@ -19,7 +19,7 @@ function TitleUpdater() {
     <div style={{ padding: '20px' }}>
       <h2>Click Counter</h2>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)} style={{ padding: '10px 15px' }}>
+      <button onClick={() => setCount(count + 1)} style={{ padding: '9px 15px' }}>
         Click Me
       </button>
     </div>
