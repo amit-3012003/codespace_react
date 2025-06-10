@@ -1,0 +1,25 @@
+/* src/components/NavBar.css */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 1rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: #f0f0f0;
+}
+
+.active-link {
+  font-weight: bold;
+  color: #0066cc !important;
+  background-color: #e6f2ff;
+}

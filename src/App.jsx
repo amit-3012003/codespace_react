@@ -1,7 +1,6 @@
 // src/App.jsx
-import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import NavBar from './components/NavBar';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -9,27 +8,31 @@ import SubPage from './components/SubPage';
 
 function App() {
   return (
-    <BrowserRouter>
-      <nav style={{ padding: '10px', borderBottom: '1px solid #ccc' }}>
-        <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
-        <Link to="/about" style={{ marginRight: '10px' }}>About</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-
-      <div style={{ padding: '20px' }}>
+    <Router>
+      {/* 1. Navigation Bar (New Addition) */}
+      <NavBar />
+      
+      {/* 2. Main Content Area */}
+      <main className="app-content">
         <Routes>
+          {/* 3. Default Route */}
           <Route path="/" element={<Home />} />
           
-          {/* Nested route structure for About */}
+          {/* 4. About Route with Nested Subpage (Existing Feature) */}
           <Route path="/about" element={<About />}>
             <Route path="subpage" element={<SubPage />} />
           </Route>
-
+          
+          {/* 5. Contact Route (Existing Feature) */}
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<h2>404: Page Not Found</h2>} />
+          
+          {/* 6. Catch-all Route (Existing Feature) */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </div>
-    </BrowserRouter>
+      </main>
+      
+      {/* 7. Optional Footer can go here */}
+    </Router>
   );
 }
 
